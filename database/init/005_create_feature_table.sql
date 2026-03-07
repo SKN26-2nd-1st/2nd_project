@@ -15,6 +15,7 @@ Created: 2026-03-07
 
 Updated:
 - 2026-03-07: initial version
+- 2026-03-07: creditcard_chur
 =========================================================================
 */
 
@@ -33,7 +34,7 @@ START TRANSACTION;
 USE creditcard_churn_db;
 
 CREATE TABLE creditcard_churn (
-                              creditcard_churr_id BIGINT UNSIGNED   NOT NULL,
+                              creditcard_churn_id BIGINT UNSIGNED   NOT NULL,
 
                               education_id        BIGINT UNSIGNED   NOT NULL,
                               marital_id          BIGINT UNSIGNED   NOT NULL,
