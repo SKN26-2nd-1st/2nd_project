@@ -28,7 +28,7 @@
 # - requirements.txt 기반 wheel 파일 생성
 # - (필요 시) 컴파일 도구를 이 단계에서만 사용
 # =========================================================================
-FROM ccc_project_python_base:py312 AS builder
+FROM ccrm_project_python_base:py312 AS builder
 
 # Container 작업 경로
 WORKDIR /app
@@ -48,7 +48,7 @@ RUN python -m pip wheel --no-cache-dir --wheel-dir=/wheels -r requirements.txt
 # - builder에서 만든 wheel만 설치하여 실행 환경 구성
 # - 빌드 단계 파일/캐시 제거로 이미지 용량 최소화
 # =========================================================================
-FROM ccc_project_python_base:py312
+FROM ccrm_project_python_base:py312
 
 # Container 작업 경로
 WORKDIR /app

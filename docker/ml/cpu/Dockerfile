@@ -35,7 +35,7 @@
 # - 빌드 도구 제거로 보안성 향상
 # - 패키지 설치 속도 향상
 # =========================================================================
-FROM ccc_project_python_base:py312 AS builder
+FROM ccrm_project_python_base:py312 AS builder
 
 # 컨테이너 내부 작업 디렉토리 설정
 WORKDIR /app
@@ -62,7 +62,7 @@ RUN python -m pip wheel --no-cache-dir --wheel-dir=/wheels -r requirements.txt
 # - 불필요한 빌드 도구 제거
 # - 더 작은 Docker 이미지 생성
 # =========================================================================
-FROM ccc_project_python_base:py312
+FROM ccrm_project_python_base:py312
 
 # 컨테이너 내부 작업 디렉토리 설정
 WORKDIR /app

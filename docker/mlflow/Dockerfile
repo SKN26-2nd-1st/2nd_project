@@ -25,7 +25,7 @@
 # =========================================================================
 # Stage 1: Builder
 # =========================================================================
-FROM ccc_project_python_base:py312 AS builder
+FROM ccrm_project_python_base:py312 AS builder
 
 WORKDIR /app
 
@@ -37,7 +37,7 @@ RUN python -m pip wheel --no-cache-dir --wheel-dir=/wheels -r requirements.txt
 # =========================================================================
 # Stage 2: Runtime
 # =========================================================================
-FROM ccc_project_python_base:py312
+FROM ccrm_project_python_base:py312
 
 WORKDIR /app
 
