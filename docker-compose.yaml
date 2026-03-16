@@ -24,6 +24,7 @@
 # - 2026-03-08: compose 파일 수정 (.vscode local mount, notebooks syspath 이동) 및 작업자명을 github 이름으로 변경 (@nobrain711)
 # - 2026-03-12: env_file / profiles / DB 계정 분리 반영 / 프로젝트 명 수정 (@nobrain711)
 # - 2026-03-13: pipeline port포워딩 / streamlit system working list app 추가 (@nobrain711)
+# - 2026-03-13: streamlit container에 mlflow폴더 local mount (@nobrain711)
 # =========================================================================
 
 # name Compose 이름 지정
@@ -273,6 +274,7 @@ services:
     # volumes: 로컬 streamlit 폴더를 컨테이너에 마운트
     volumes:
       - ./streamlit:/app
+      - ./mlflow/artifacts:/mlflow/artifacts
       - ./.vscode:/app/.vscode:ro
 
     # working_dir: 컨테이너 기본 작업 디렉토리 설정
