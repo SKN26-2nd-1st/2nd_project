@@ -33,7 +33,7 @@ def get_mlflow_config() -> MlflowConfig:
     환경 변수에서 MLflow 설정값을 읽어옵니다.
     """
     # .strip()을 추가해서 혹시 모를 공백 문제를 원천 차단합니다.
-    tracking_uri = getenv("MLFLOW_API", "https://9182-183-109-116-251.ngrok-free.app/").strip()
+    tracking_uri = getenv("MLFLOW_TRACKING_URI", "localhost:15000").strip()
     
     # 실험 이름도 환경 변수에서 읽어오도록 개선
     experiment_name = getenv("MLFLOW_EXPERIMENT_NAME", "ccrm_experiment").strip()

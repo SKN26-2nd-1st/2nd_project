@@ -16,11 +16,14 @@ Created: 2026-03-10
 
 Updated:
 - 2026-03-10: initial version (@nobrain711)
+- 2026-03-16: 호출부 관련 에러 수정 (@nobrain711)
 =========================================================================
 """
 import requests
 from pandas import DataFrame, Series 
 from typing import Tuple
+
+from common.config import PIPELINE_DATASET_URL
 
 def fetch_creditcard(X_y_split: bool = False
                      ) -> DataFrame | Tuple[DataFrame, Series]:
@@ -33,7 +36,7 @@ def fetch_creditcard(X_y_split: bool = False
     Returns:
         DataFrame | Tuple[DataFrame, Series]: X_y_split이 False인 경우 DataFrame, True인 경우 (DataFrame, Series) 형태로 반환
     """
-    response = requests.get("https://0b9f-183-109-116-251.ngrok-free.app/dataset/creditcard-churn", params={"X_y_split": X_y_split})
+    response = requests.get(PIPELINE_DATASET_URL, params={"X_y_split": X_y_split})
     payload = response.json()
     
     if X_y_split:
